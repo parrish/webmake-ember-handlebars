@@ -1,12 +1,11 @@
 {
-  "name": "webmake-handlebars",
-  "version": "0.1.1",
-  "description": "Require Handlebars files with Webmake",
+  "name": "webmake-ember-handlebars",
+  "version": "0.1.2",
+  "description": "Precompiled Ember.js Handlebars templates for Webmake",
   "keywords": [
     "browser",
     "browserify",
     "bundle",
-    "cjs",
     "commonjs",
     "deploy",
     "make",
@@ -14,14 +13,15 @@
     "handlebars",
     "hbs",
     "web",
-    "webmake"
+    "webmake",
+    "ember"
   ],
-  "author": "Adam Daniel <adam@acdaniel.com>",
   "dependencies": {
-    "handlebars": "~1.0.12"
+    "jsdom": "0.8.8",
+    "deferred": "~0.6.6"
   },
   "peerDependencies": {
-    "webmake": "~0.3.19"
+    "webmake": "~0.3.20"
   },
   "license": "MIT"
 }
