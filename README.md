@@ -27,19 +27,19 @@ Programmatically:
     webmake(inputPath, { ext: ['handlebars', 'otherext'] }, cb);
 
 ## How to Use the Bundled Template
-First, download the handlebars.runtime.js from https://github.com/wycats/handlebars.js/blob/master/dist/handlebars.runtime.js. Unfortunately the current NPM package does not include the CommonJS compatible version of the runtime. 
+To add the template to your bundle, just require it.  Ember will access it from the template id.
 
-Second, make sure the runtime file is included in your page either by using a script tag like so:
+The template id will be set to the name and path of the file with a few caveats:
 
-    <!-- this will add Handlebars as a global -->
-    <script src="js/lib/handlebars.runtime.js"></script>
+  - Templates are expected to be in the `app/` directory
+  - Templates must have `.hbs`, `.handlebars`, `.ehb` file extensions
+  - If the template path includes `templates`, `views`, or `partials`, those segments will be ignored in the template id
 
-or bundle it alongside the template like so:
+For example:
 
-    // this will give you a reference in your module
-    var Handlebars = require('../lib/handlebars.runtime');
-
-To add the template to your bundle, just require it as usual and use the runtime to render it:
-
-    var myTemplate = Handlebars.template(require('./path/to/template/mytemplate'));
-    var html = myTemplate(); // renders the template and returns the generated HTML
+```javascript
+require('./foo') // app/foo.hbs will be accessible at #foo
+require('./templates/foo') // app/templates/foo.hbs will be accessible at #foo
+require('./templates/foo/bar') // app/templates/foo/bar.hbs will be accessible at #foo/bar
+require('./templates/foo.bar') // app/templates/foo.bar.hbs will be accessible at #foo/bar
+```
