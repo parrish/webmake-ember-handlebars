@@ -16,6 +16,11 @@
     "webmake",
     "ember"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/parrish/webmake-ember-handlebars.git"
+  },
+  "bugs": "https://github.com/parrish/webmake-ember-handlebars/issues",
   "dependencies": {
     "jsdom": "0.8.8",
     "deferred": "~0.6.6"
