@@ -20,8 +20,14 @@ exports.compile = function(src, options) {
       if (error) {
         return d.reject(error);
       } else {
-        var compiled = window.Ember.Handlebars.precompile(src);
-        return d.resolve("Ember.TEMPLATES['" + name + "'] = Ember.Handlebars.template(" + compiled + ");");
+        var compiled;
+        try {
+          compiled = window.Ember.Handlebars.precompile(src);
+          return d.resolve("Ember.TEMPLATES['" + name + "'] = Ember.Handlebars.template(" + compiled + ");");
+        } catch(_error) {
+          console.error('Error compiling ' + options.localFilename);
+          d.reject(_error);
+        }
       }
     }
   });

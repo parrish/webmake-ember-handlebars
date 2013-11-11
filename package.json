@@ -1,6 +1,6 @@
 {
   "name": "webmake-ember-handlebars",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Precompiled Ember.js Handlebars templates for Webmake",
   "keywords": [
     "browser",
