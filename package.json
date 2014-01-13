@@ -1,6 +1,6 @@
 {
   "name": "webmake-ember-handlebars",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Precompiled Ember.js Handlebars templates for Webmake",
   "keywords": [
     "browser",
@@ -26,7 +26,7 @@
     "deferred": "~0.6.6"
   },
   "peerDependencies": {
-    "webmake": "~0.3.20"
+    "webmake": "~0.3.23"
   },
   "license": "MIT"
 }
